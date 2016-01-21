@@ -6,13 +6,15 @@
 #    By: adespond <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 11:41:24 by adespond          #+#    #+#              #
-#    Updated: 2016/01/07 09:41:17 by adespond         ###   ########.fr        #
+#    Updated: 2016/01/21 14:04:01 by adespond         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 
 SRC		= ft_putchar_fd.c \
+		  get_next_line.c \
+		  ft_strchrpos.c \
 		  ft_htoa.c \
 		  ft_itoa_base.c \
 	      ft_ltoa.c \

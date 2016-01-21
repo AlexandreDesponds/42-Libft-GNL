@@ -6,7 +6,7 @@
 /*   By: adespond <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:44:51 by adespond          #+#    #+#             */
-/*   Updated: 2015/11/30 12:47:05 by adespond         ###   ########.fr       */
+/*   Updated: 2016/01/21 14:25:18 by adespond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ char					**ft_strsplit(char const *s, char c)
 		if (s[i - 1] != c)
 			ret[word++] = ft_malloc_word(s, i - len, len);
 	}
+	ret[word] = 0;
 	return (ret);
 }

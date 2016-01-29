@@ -6,7 +6,7 @@
 #    By: adespond <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 11:41:24 by adespond          #+#    #+#              #
-#    Updated: 2016/01/21 14:04:01 by adespond         ###   ########.fr        #
+#    Updated: 2016/01/29 17:07:19 by adespond         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC		= ft_putchar_fd.c \
 		  ft_strchrpos.c \
 		  ft_htoa.c \
 		  ft_itoa_base.c \
-	      ft_ltoa.c \
+		  ft_ltoa.c \
 		  ft_putchar_ext_fd.c \
 		  ft_putstr_ext.c \
 		  ft_putstr_ext_fd.c \
@@ -88,26 +88,35 @@ SRC		= ft_putchar_fd.c \
 		  ft_putwstr_fd.c
 
 OBJ		= $(SRC:.c=.o)
-
+RANDOM1  = $(shell bash -c 'jot -r 1 41 47')
+RANDOM2  = $(shell bash -c 'jot -r 1 31 37')
 .SILENT:
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-	printf '\033[4m'
-	printf '\033[32m[ ✔ ] %s\n\033[0m' "Create Libft"
+	printf '\033[105mdone done done done done done done done done\033[49m\n'
+	printf '\033[105m  \033[49m                                        \033[105m  \033[49m\n'
+	printf '\033[105m  \033[49m  \033[41m  \033[49m      \033[44m  \033[49m  \033[43m      \033[49m    \033[42m      \033[49m  \033[46m      \033[49m  \033[105m  \033[49m\n'
+	printf '\033[105m  \033[49m  \033[41m  \033[49m          \033[43m  \033[49m    \033[43m  \033[49m  \033[42m  \033[49m        \033[46m  \033[49m    \033[105m  \033[49m\n'
+	printf '\033[105m  \033[49m  \033[41m  \033[49m      \033[44m  \033[49m  \033[43m      \033[49m    \033[42m    \033[49m      \033[46m  \033[49m    \033[105m  \033[49m\n'
+	printf '\033[105m  \033[49m  \033[41m  \033[49m      \033[44m  \033[49m  \033[43m  \033[49m    \033[43m  \033[49m  \033[42m  \033[49m        \033[46m  \033[49m    \033[105m  \033[49m\n'
+	printf '\033[105m  \033[49m  \033[41m      \033[49m  \033[44m  \033[49m  \033[43m      \033[49m    \033[42m  \033[49m        \033[46m  \033[49m    \033[105m  \033[49m\n'
+	printf '\033[105m  \033[49m                                        \033[105m  \033[49m\n'
+	printf '\033[105mdone done done done done done done done done\033[49m\n'
+	#printf '\033[32m[ ✔ ] %s\n\033[0m' "Create Libft"
 
 %.o : %.c
 	gcc -Wall -Wextra -Werror -I. -c $<
-	printf '\033[0m[ ✔ ] %s\n\033[0m' "$<"
+	printf '\033[%dm\033[%dm[ ✔ ] %-38s\033[39m\033[49m\n' $(RANDOM1) $(RANDOM2) "$<"
 
 clean:
 	/bin/rm -rf *.o
-	printf '\033[31m[ ✔ ] %s\n\033[0m' "Clean Libft"
+	#printf '\033[31m[ ✔ ] %s\n\033[0m' "Clean Libft"
 
 fclean: clean
 	/bin/rm -f $(NAME)
-	printf '\033[31m[ ✔ ] %s\n\033[0m' "Fclean Libft"
+	#printf '\033[31m[ ✔ ] %s\n\033[0m' "Fclean Libft"
 
 re: fclean all
 

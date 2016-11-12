@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # define BUFF_SIZE 10
+# define FD_MAX 1000
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -27,12 +28,11 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_data
+typedef	struct	s_get
 {
-	char			*last;
-	int				fd;
-	struct s_data	*next;
-}					t_data;
+	int			fd;
+	int			ret;
+}				t_get;
 
 int					get_next_line(int const fd, char **line);
 int					ft_strchrpos(const char *s, int c);
